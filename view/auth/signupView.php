@@ -14,15 +14,32 @@
               <label for="email">Adresse email</label>
               <input type="email" name="email" value="" id="email" class="form-control" />
             </div>
+            <div class="invalid-email">
+              <p>
+                Veuillez renseigner une adresse email valide
+              </p>
+            </div>
 
             <div class="form-group">
               <label for="password">Mot de passe</label>
               <input type="password" name="password" id="password" class="form-control" />
             </div>
 
+            <div class="invalid-password">
+              <p>
+                Veuillez renseigner un mot de passe valide
+              </p>
+            </div>
+
             <div class="form-group">
               <label for="password_confirm">Confirmez votre mot de passe</label>
               <input type="password" name="password_confirm" id="password_confirm" class="form-control" />
+            </div>
+
+            <div class="invalid-password-confirm">
+              <p>
+                Les mots de passe ne correspondent pas
+              </p>
             </div>
 
             <div class="form-group">
@@ -50,6 +67,8 @@
     </div>
   </div>
 </div>
+
+<script src="public/js/checkForm.js"></script>
 
 
 

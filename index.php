@@ -46,6 +46,9 @@ if ( isset( $_GET['action'] ) ):
       mediaContent($id);
 
     break;
+    case 'confirmEmail':
+
+      confirmEmailPage();
 
   endswitch;
 

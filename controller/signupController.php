@@ -57,3 +57,24 @@ function register($post){
 
   require('view/auth/signupView.php');
 }
+
+function confirmEmailPage(){
+
+  $user_email = isset( $_SESSION['user_email'] ) ? $_SESSION['user_email'] : false;
+  var_dump($user_email);
+  if ($user_email) {
+    $user = new User($user_email); // Instantiate the User class
+    var_dump($user);
+  
+    $token = "";
+    $isVerified = 1;
+    $user->setToken($token);
+    $user->setIsVerified($isVerified);
+
+    $user->updateUser();
+
+    header('location: index.php');
+    exit();
+  }
+  require('view/auth/confirmEmail.php');
+}
