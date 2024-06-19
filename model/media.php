@@ -103,4 +103,42 @@ class Media {
 
   }
 
+  /**************************************
+   * ----------- GET ALL MEDIA-- --------
+   * ************************************/
+
+  public static function getAllMedias() {
+
+    // Open database connection
+    $db   = init_db();
+
+    $req  = $db->prepare( "SELECT * FROM media ORDER BY release_date DESC" );
+    $req->execute();
+
+    // Close databse connection
+    $db   = null;
+
+    return $req->fetchAll();
+  }
+
+  /**************************************
+   * ----------- GET MEDIA BY ID --------
+   * ************************************/
+
+  public static function getMediaById( $id ) {
+
+    // Open database connection
+    $db   = init_db();
+
+    $req  = $db->prepare( "SELECT * FROM media WHERE id = ?" );
+    $req->execute( array( $id ));
+
+    // Close databse connection
+    $db   = null;
+
+    return $req->fetch();
+
+  }
+
 }
+
