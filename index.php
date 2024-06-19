@@ -28,6 +28,12 @@ if ( isset( $_GET['action'] ) ):
 
     break;
 
+    case 'register':
+        
+        register($_POST);
+
+    break;
+
     case 'logout':
 
       logout();
