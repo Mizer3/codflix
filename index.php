@@ -29,14 +29,21 @@ if ( isset( $_GET['action'] ) ):
     break;
 
     case 'register':
-        
-        register($_POST);
+
+      register($_POST);
 
     break;
 
     case 'logout':
 
       logout();
+
+    break;
+
+    case 'media':
+
+      $id = $_GET['id'];
+      mediaContent($id);
 
     break;
 
