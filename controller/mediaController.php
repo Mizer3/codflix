@@ -18,14 +18,3 @@ function mediaPage() {
   require('view/mediaListView.php');
 
 }
-
-/***************************
- * --- MEDIA PAGE CONTENT----
- * *************************/
-
-function mediaContent($id) {
-  $mediaById = Media::getMediaById($id);
-
-require('view/mediaView.php');
-
-}
