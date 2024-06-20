@@ -93,6 +93,12 @@ if ( isset( $_GET['action'] ) ):
 
     break;
 
+    case 'searchMedia':
+
+      mediaPage();
+
+    break;
+
   endswitch;
 
 else:
