@@ -57,3 +57,57 @@ function register($post){
 
   require('view/auth/signupView.php');
 }
+
+/******************************************
+* ----- REDIRCT FOR EMAIL VALIDATION -----
+******************************************/
+
+function confirmEmailPage(){
+
+  $user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
+  if ($user_id) {
+  require('view/auth/confirmEmail.php');
+  } else {
+    header('location: index.php');
+  }
+  
+}
+
+/***************************
+* ----- EMAIL VALIDATION -----
+* *************************/
+
+function confirmEmail($user_id){
+  $userData = User::getUserById($user_id);
+
+
+  $data = new stdClass();
+  $data->id = $userData['id'];
+  $data->email = $userData['email'];
+  $data->password = $userData['password'];
+  $data->isVerified = $userData['isVerified'];
+  $data->token = $userData['token'];
+
+  
+
+  if( empty( $data->email ) || empty( $data->token ) ){
+    throw new Exception( 'User does not exist' );
+  } else {
+    $user = new User($data);
+    $userMailVerif = $user->getUserByEmail();
+    if($userMailVerif && sizeof($userMailVerif) != 0){
+      if($data->token == $userData['token']){
+        $user->setIsVerified(1);
+        $user->setToken("");
+        $user->updateUser();
+        header('location: index.php');
+        exit();
+      } else {
+        $error_msg = "Token incorrect";
+      }
+    } else {
+      $error_msg = "Email incorrect";
+    }
+  }
+  require('view/auth/confirmEmail.php');
+}

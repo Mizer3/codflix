@@ -40,13 +40,16 @@ function login( $post ) {
 
   if( $userData && sizeof( $userData ) != 0 ):
     if(password_verify($data->password, $userData['password']) || $data->password == $userData['password']){
+      
       // Set session
-            $_SESSION['user_id'] = $userData['id'];
-
-            header( 'location: index.php ');
-    } else {
-      $error_msg = "Email ou mot de passe incorrect";
-    }
+      $_SESSION['user_id'] = $userData['id'];
+      if($userData['isVerified'] == 0){
+        header( 'location: index.php?action=confirmEmailView' );
+      } else {
+        header( 'location: index.php ');
+      }
+    $error_msg = "Email ou mot de passe incorrect";
+  }
   endif;
 
   require('view/auth/loginView.php');
