@@ -46,9 +46,19 @@ if ( isset( $_GET['action'] ) ):
       mediaContent($id);
 
     break;
-    case 'confirmEmail':
+
+    case 'confirmEmailView':
 
       confirmEmailPage();
+
+    break;
+
+    case 'confirmEmail':
+
+      $user_id = $_SESSION['user_id'];
+      confirmEmail($user_id);
+
+    break;
 
   endswitch;
 

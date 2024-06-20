@@ -42,9 +42,9 @@ function login( $post ) {
     if(password_verify($data->password, $userData['password']) || $data->password == $userData['password']){
       
       // Set session
-      $_SESSION['user_email'] = $userData['email'];
+      $_SESSION['user_id'] = $userData['id'];
       if($userData['isVerified'] == 0){
-        header( 'location: index.php?action=confirmEmail' );
+        header( 'location: index.php?action=confirmEmailView' );
       } else {
         header( 'location: index.php ');
       }
