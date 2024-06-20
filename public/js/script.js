@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
+$(document).ready(function() {
 
-  document.getElementById('sidebarCollapse').addEventListener('click', function() {
+  $( '#sidebarCollapse' ).on( 'click', function() {
 
-    document.getElementById('sidebar').classList.toggle('open');
+    $( '#sidebar' ).toggleClass('open');
 
   });
 

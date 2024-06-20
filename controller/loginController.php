@@ -27,8 +27,6 @@ function loginPage() {
 
 function login( $post ) {
 
-
-
   $data           = new stdClass();
   $data->email    = $post['email'];
   $data->password = $post['password'];
@@ -39,17 +37,13 @@ function login( $post ) {
   $error_msg      = "Email ou mot de passe incorrect";
 
   if( $userData && sizeof( $userData ) != 0 ):
-    if(password_verify($data->password, $userData['password']) || $data->password == $userData['password']){
-      
+    if( $user->getPassword() == $userData['password'] ):
+
       // Set session
       $_SESSION['user_id'] = $userData['id'];
-      if($userData['isVerified'] == 0){
-        header( 'location: index.php?action=confirmEmailView' );
-      } else {
-        header( 'location: index.php ');
-      }
-    $error_msg = "Email ou mot de passe incorrect";
-  }
+
+      header( 'location: index.php ');
+    endif;
   endif;
 
   require('view/auth/loginView.php');
