@@ -9,6 +9,10 @@
         <div>
             <a href="index.php?action=updateForm" class="btn btn-primary">Modifier mon profil</a>
         </div>
+
+        <div>
+            <a href="index.php?action=deleteUser" class="btn btn-danger">Supprimer profil</a>
+        </div>
     <?php else : ?>
         <p>WALOUUUUUUUUUUU</p>
     <?php endif ?>

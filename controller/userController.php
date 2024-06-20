@@ -21,6 +21,10 @@ function userData($id) {
 
 }
 
+/***************************
+ * ----- REDIRECT TO UPDATE FORM -----
+ * *************************/
+
 function updateForm($id){
 
   $user_id = isset( $id ) ? $id : false;
@@ -34,6 +38,10 @@ function updateForm($id){
     require('view/homeView.php');
   endif;
 }
+
+/***************************
+ * ----- UPDATE USER DATA -----
+ * *************************/
 
 function updateProfile($id) {
 
@@ -78,6 +86,33 @@ function updateProfile($id) {
     $user->updateUser();
     header('location: index.php');
   }else {
+    $error_msg = "Une erreur est subvenue";
+  }
+
+}
+
+/***************************
+ * ----- DELETE USER -----
+ * *************************/
+
+function deleteUser($id) {
+
+  $user_id = isset( $id ) ? $id : false;
+  $user_data  = User::getUserById( $user_id );
+
+  if( $user_id == $_SESSION['user_id'] ){
+
+    $data = new stdClass();
+    $data->id = $user_data['id'];
+    $data->email = $user_data['email'];
+    $data->password = $user_data['password'];
+    $data->isVerified = $user_data['isVerified'];
+
+    $user = new User( $data );
+    $user->deleteUser();
+    session_destroy();
+    header('location: index.php');
+  } else {
     $error_msg = "Une erreur est subvenue";
   }
 

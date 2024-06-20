@@ -86,6 +86,13 @@ if ( isset( $_GET['action'] ) ):
 
     break;
 
+    case 'deleteUser':
+
+      $user_id = $_SESSION['user_id'];
+      deleteUser($user_id);
+
+    break;
+
   endswitch;
 
 else:

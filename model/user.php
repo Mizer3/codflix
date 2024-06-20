@@ -165,4 +165,23 @@ class User {
     $db = null;
   }
 
+  /***************************************
+   * ------- DELETE USER -------
+   * ***************************************/
+
+  public function deleteUser() {
+    // Open database connection
+    $db = init_db();
+
+    // Prepare the SQL query
+    $req = $db->prepare("DELETE FROM user WHERE id = ?");
+
+    // Execute the query
+    $req->execute(array($this->id));
+
+    // Close database connection
+    $db = null;
+  
+  }
+
 }
