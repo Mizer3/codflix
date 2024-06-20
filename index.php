@@ -34,6 +34,61 @@ if ( isset( $_GET['action'] ) ):
 
     break;
 
+    case 'media':
+
+      $id = $_GET['id'];
+      mediaContent($id);
+
+    break;
+
+    case 'confirmEmailView':
+
+      confirmEmailPage();
+
+    break;
+
+    case 'confirmEmail':
+
+      $user_id = $_SESSION['user_id'];
+      confirmEmail($user_id);
+
+    break;
+
+    case 'profileView':
+
+      $user_id = $_SESSION['user_id'];
+      userData($user_id);
+
+    break;
+
+    case 'updateForm':
+
+      $user_id = $_SESSION['user_id'];
+      updateForm($user_id);
+
+    break;
+
+    case 'updateProfile':
+
+      $user_id = $_SESSION['user_id'];
+      updateProfile($user_id);
+
+    break;
+
+    case 'deleteUser':
+
+      $user_id = $_SESSION['user_id'];
+      deleteUser($user_id);
+
+    break;
+
+    case 'searchMedia':
+
+      mediaPage();
+
+    break;
+
+
   endswitch;
 
 else:
