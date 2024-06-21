@@ -7,6 +7,8 @@ class User {
   protected $id;
   protected $email;
   protected $password;
+  protected $isVerified;
+  protected $token;
 
   public function __construct( $user = null ) {
 
@@ -41,7 +43,16 @@ class User {
       throw new Exception( 'Vos mots de passes sont différents' );
     endif;
 
-    $this->password = $password;
+    // Hash the password with bcrypt
+    $this->password = password_hash($password, PASSWORD_BCRYPT);
+  }
+
+  public function setIsVerified( $isVerified ) {
+    $this->isVerified = $isVerified;
+  }
+
+  public function setToken( $token ) {
+    $this->token = $token;
   }
 
   /***************************
