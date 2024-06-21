@@ -7,8 +7,6 @@ class User {
   protected $id;
   protected $email;
   protected $password;
-  protected $isVerified;
-  protected $token;
 
   public function __construct( $user = null ) {
 
@@ -16,8 +14,6 @@ class User {
       $this->setId( isset( $user->id ) ? $user->id : null );
       $this->setEmail( $user->email );
       $this->setPassword( $user->password, isset( $user->password_confirm ) ? $user->password_confirm : false );
-      $this->isVerified = false;
-      $this->token = "";
     endif;
   }
 
@@ -73,14 +69,6 @@ class User {
     return $this->password;
   }
 
-  public function getIsVerified() {
-    return $this->isVerified;
-  }
-
-  public function getToken() {
-    return $this->token;
-  }
-
   /***********************************
   * -------- CREATE NEW USER ---------
   ************************************/
@@ -99,14 +87,10 @@ class User {
     // Insert new user
     $req->closeCursor();
 
-    $token = bin2hex(random_bytes(50));
-
-    $req  = $db->prepare( "INSERT INTO user ( email, password, isVerified, token ) VALUES ( :email, :password, :isVerified, :token )" );
+    $req  = $db->prepare( "INSERT INTO user ( email, password ) VALUES ( :email, :password )" );
     $req->execute( array(
       'email'     => $this->getEmail(),
-      'password'  => $this->getPassword(),
-      'isVerified' => false,
-      'token'     => $token
+      'password'  => $this->getPassword()
     ));
 
     // Close databse connection
@@ -138,51 +122,16 @@ class User {
 
   public function getUserByEmail() {
 
+    // Open database connection
     $db   = init_db();
 
     $req  = $db->prepare( "SELECT * FROM user WHERE email = ?" );
     $req->execute( array( $this->getEmail() ));
 
+    // Close databse connection
     $db   = null;
 
     return $req->fetch();
-  }
-
-  /***************************************
-   * ------- UPDATE USER -------
-   * ***************************************/
-
-  public function updateUser() {
-    // Open database connection
-    $db = init_db();
-
-    // Prepare the SQL query
-    $req = $db->prepare("UPDATE user SET email = ?, password = ?, isVerified = ?, token = ? WHERE id = ?");
-
-    // Execute the query
-    $req->execute(array($this->email, $this->password, $this->isVerified, $this->token, $this->id));
-
-    // Close database connection
-    $db = null;
-  }
-
-  /***************************************
-   * ------- DELETE USER -------
-   * ***************************************/
-
-  public function deleteUser() {
-    // Open database connection
-    $db = init_db();
-
-    // Prepare the SQL query
-    $req = $db->prepare("DELETE FROM user WHERE id = ?");
-
-    // Execute the query
-    $req->execute(array($this->id));
-
-    // Close database connection
-    $db = null;
-  
   }
 
 }

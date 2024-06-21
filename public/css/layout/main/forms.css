@@ -23,21 +23,3 @@
     color: #fff;
     font-weight: 400;
 }
-
-.invalid-email {
-  color: red;
-  font-weight: 600;
-  display: none;
-}
-
-.invalid-password {
-  color: red;
-  font-weight: 600;
-  display: none;
-}
-
-.invalid-password-confirm {
-  color: red;
-  font-weight: 600;
-  display: none;
-}

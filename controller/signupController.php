@@ -2,7 +2,6 @@
 
 require_once( 'model/user.php' );
 
-
 /****************************
 * ----- LOAD SIGNUP PAGE -----
 ****************************/
@@ -19,7 +18,6 @@ function signupPage() {
   endif;
 
 }
-
 
 /***************************
 * ----- SIGNUP FUNCTION -----
