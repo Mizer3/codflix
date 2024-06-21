@@ -1,0 +1,136 @@
+[33mcommit 4dead7d60ef606656dd39268ea0795a968c4a505[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m)[m
+Merge: e497ba1 4862d46
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Thu Jun 20 23:37:50 2024 +0200
+
+    Merge pull request #7 from Mizer3/search
+    
+    research function correct, no ajax for now
+
+[33mcommit 4862d46d883a5752cc711749103a28feb995d80a[m[33m ([m[1;31morigin/search[m[33m)[m
+Merge: 61e97b1 e497ba1
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Thu Jun 20 23:37:02 2024 +0200
+
+    Merge branch 'develop' into search
+
+[33mcommit 61e97b1a11dd1210ab70a838b707f3238b5de757[m[33m ([m[1;32msearch[m[33m)[m
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Thu Jun 20 23:27:12 2024 +0200
+
+    research function correct, no ajax for now
+
+[33mcommit e497ba124e02b2d1bd653b98b8efc71e9cb0fec9[m[33m ([m[1;32mresearch[m[33m)[m
+Merge: 8e17fb8 2c5d4ab
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Thu Jun 20 18:43:59 2024 +0200
+
+    Merge pull request #6 from Mizer3/revert-5-register
+    
+    Revert 5 register
+
+[33mcommit 2c5d4ab21521de3e560277a7582c11b56489f4db[m
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Thu Jun 20 18:43:34 2024 +0200
+
+    Revert "Register"
+
+[33mcommit c8d45690c7d68030e61d17f0d36c9468a4e5f3e2[m
+Merge: c26f2b1 ce544e5
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Thu Jun 20 18:43:08 2024 +0200
+
+    Merge pull request #5 from Mizer3/register
+    
+    Register
+
+[33mcommit ce544e5e3abdd5521a8996cff27eb207c58a1de6[m
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Thu Jun 20 18:37:58 2024 +0200
+
+    delete user ok
+
+[33mcommit fe9faa21dc276c8027ab44a64757674a1095ad66[m
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Thu Jun 20 18:23:05 2024 +0200
+
+    page profile avec modification mdp et email
+
+[33mcommit 8e17fb8562038895205afede046a8dd8d5ae2cfa[m
+Merge: 9eed25b 7c5103d
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Thu Jun 20 13:39:21 2024 +0200
+
+    Merge pull request #4 from Mizer3/register
+    
+    Register
+
+[33mcommit 7c5103df449e384f58611e3cd9c086e113500cf0[m
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Thu Jun 20 13:38:34 2024 +0200
+
+    user mail verification ok, miss responsive
+
+[33mcommit da9f48f2bf42a6767c94c45006ea2e5345303569[m
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Wed Jun 19 22:59:34 2024 +0200
+
+    try to verify email
+
+[33mcommit 9eed25b0060427abcc099be46c0f2edc2d9e99ec[m
+Merge: 5a1df82 2edac61
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Wed Jun 19 17:17:28 2024 +0200
+
+    Merge pull request #3 from Mizer3/media
+    
+    Media
+
+[33mcommit 2edac6143433d8b691a2d4034639fbdb9493e856[m[33m ([m[1;31morigin/media[m[33m, [m[1;32mmedia[m[33m)[m
+Merge: c28e778 5a1df82
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Wed Jun 19 17:14:46 2024 +0200
+
+    Merge branch 'develop' of https://github.com/Mizer3/codflix into media
+
+[33mcommit c28e778c68f7954f1878ecb337b777665acfd7ad[m
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Wed Jun 19 17:10:24 2024 +0200
+
+    mediaList ok, mediaView ok, no responsive for now, miss the serie part
+
+[33mcommit 5a1df8255ef9f2117cea677adec8bc4d86f9fa75[m
+Merge: 25954a9 2952a60
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Wed Jun 19 14:09:54 2024 +0200
+
+    Merge pull request #2 from Mizer3/register
+    
+    fix hash password when login
+
+[33mcommit 2952a60fc105fad3996f5e2c2ef04cab6d19bfe7[m
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Wed Jun 19 14:09:10 2024 +0200
+
+    fix hash password when login
+
+[33mcommit 25954a96be918f33f1ded9bd796b0241cd99375e[m
+Merge: c26f2b1 60ae8a1
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Wed Jun 19 11:17:40 2024 +0200
+
+    Merge pull request #1 from Mizer3/register
+    
+    register ok, hash password ok, miss mail confirmation
+
+[33mcommit 60ae8a1e67a0a835be5ab7557f7f7f6ee81c8e62[m
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Wed Jun 19 11:16:01 2024 +0200
+
+    register ok, hash password ok, miss mail confirmation
+
+[33mcommit c26f2b1288a898dc2619b694a42d397623a0f5c8[m
+Author: Mizer3 <91741197+Mizer3@users.noreply.github.com>
+Date:   Tue Jun 18 10:11:18 2024 +0200
+
+    add project
