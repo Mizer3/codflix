@@ -32,13 +32,13 @@ function register($post){
   $data->password = isset($post['password']) ? trim($post['password']) : "";
   $data->password_confirm = isset($post['password_confirm']) ? trim($post['password_confirm']) : "";
 
-  // Check if all fields are filled
+  // Check if all fields are filled and password valid
   if( empty( $data->email ) || empty( $data->password ) || empty( $data->password_confirm ) ){
     throw new Exception( 'Tous les champs ne sont pas remplis' );
   }else if( !filter_var($data->email, FILTER_VALIDATE_EMAIL) ){
     throw new Exception( 'Email incorrect' );
-  }else if( strlen($data->password) < 6 ){
-    throw new Exception( 'Votre mot de passe doit contenir au moins 6 caractères' );
+  }else if( !preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/", $data->password) ){
+    throw new Exception( 'Votre mot de passe doit contenir au moins 8 caractères, dont une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial' );
   } else if( $data->password != $data->password_confirm ){
     throw new Exception( 'Vos mots de passes ne correspondent pas' );
   } else {

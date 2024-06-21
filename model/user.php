@@ -45,7 +45,8 @@ class User {
       throw new Exception( 'Vos mots de passes sont différents' );
     endif;
 
-    $this->password = password_hash($password, PASSWORD_DEFAULT);
+    // Hash the password with bcrypt
+    $this->password = password_hash($password, PASSWORD_BCRYPT);
   }
 
   public function setIsVerified( $isVerified ) {
