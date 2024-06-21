@@ -2,7 +2,6 @@
 
 require_once( 'model/user.php' );
 
-
 /****************************
 * ----- LOAD SIGNUP PAGE -----
 ****************************/
@@ -20,7 +19,6 @@ function signupPage() {
 
 }
 
-
 /***************************
 * ----- SIGNUP FUNCTION -----
 ***************************/
@@ -32,7 +30,7 @@ function register($post){
   $data->password = isset($post['password']) ? trim($post['password']) : "";
   $data->password_confirm = isset($post['password_confirm']) ? trim($post['password_confirm']) : "";
 
-  // Check if all fields are filled
+  // Check if all fields are filled and password valid
   if( empty( $data->email ) || empty( $data->password ) || empty( $data->password_confirm ) ){
     throw new Exception( 'Tous les champs ne sont pas remplis' );
   }else if( !filter_var($data->email, FILTER_VALIDATE_EMAIL) ){

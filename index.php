@@ -2,15 +2,10 @@
 
 date_default_timezone_set('Europe/Paris');
 
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
-
 require_once( 'controller/homeController.php' );
 require_once( 'controller/loginController.php' );
 require_once( 'controller/signupController.php' );
 require_once( 'controller/mediaController.php' );
-require_once( 'controller/userController.php' );
 
 /**************************
 * ----- HANDLE ACTION -----
@@ -30,12 +25,6 @@ if ( isset( $_GET['action'] ) ):
     case 'signup':
 
       signupPage();
-
-    break;
-
-    case 'register':
-
-      register($_POST);
 
     break;
 
@@ -92,6 +81,13 @@ if ( isset( $_GET['action'] ) ):
       deleteUser($user_id);
 
     break;
+
+    case 'searchMedia':
+
+      mediaPage();
+
+    break;
+
 
   endswitch;
 
