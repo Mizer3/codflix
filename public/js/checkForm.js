@@ -9,6 +9,7 @@ function registerForm(e) {
     const invalidEmail = document.getElementsByClassName('invalid-email');
     const invalidPassword = document.getElementsByClassName('invalid-password');
     const invalidPasswordConfirm = document.getElementsByClassName('invalid-password-confirm');
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
 
     if (email.value === '') {
@@ -21,7 +22,7 @@ function registerForm(e) {
         invalidPassword[0].style.display = 'block';
         e.preventDefault();
     }
-    if (password.value.length < 6) {
+    if (!passwordRegex.test(password.value)) {
         password.style.border = '1px solid red';
         invalidPassword[0].style.display = 'block';
         e.preventDefault();
