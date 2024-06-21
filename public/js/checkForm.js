@@ -22,6 +22,7 @@ function registerForm(e) {
         invalidPassword[0].style.display = 'block';
         e.preventDefault();
     }
+    // check if password is valid
     if (!passwordRegex.test(password.value)) {
         password.style.border = '1px solid red';
         invalidPassword[0].style.display = 'block';
