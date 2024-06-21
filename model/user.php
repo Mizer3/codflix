@@ -7,6 +7,8 @@ class User {
   protected $id;
   protected $email;
   protected $password;
+  protected $isVerified;
+  protected $token;
 
   public function __construct( $user = null ) {
 
